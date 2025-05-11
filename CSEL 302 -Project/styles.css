@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(bgcss3.jpg);
+    background-size: 120%;
+}
+
+#outer_container {
+    background: rgba(255, 255, 255, .1);
+    border-radius: 35px;
+    width: 96%;
+    height: 720px;
+    margin: 30px auto;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+
+}
+
+
+.left_section, .right_section {
+    flex: 1;
+    position: relative;
+    border: 0.5px solid #000000;
+    background-color: rgba(255, 255, 255, 0.027);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    box-shadow:3px 3px 3px rgba(0, 0, 0)
+    
+}
+
+.left_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: 0.5px solid #000000;
+    background-color: rgba(255, 255, 255, 0.027);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    box-shadow:3px 3px 3px rgba(0, 0, 0)
+}
+
+.input_box {
+    width: 60%;
+    padding: 15px;
+    border: 1px solid #ffffff;
+    border-radius: 25px;
+    display: block;
+    font-size: 14.5px; 
+    margin-top: -100px;
+}
+
+.submit_button {
+    padding: 8px 16px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+    display: block;
+    color: #ffffff;
+    margin-top: 5px;
+}
+
+.toolbar_div {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 25px;
+    height: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+
+
+.close_button {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    width: 20px;
+    height: 20px;
+    cursor:pointer;
+    color: #ffffff;
+}
+
+.history {
+    position: absolute;
+    width: 45px;
+    height: 20px;
+    bottom: 25px;
+    left: 20px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+
+
+.Title_Text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 100px;
+    text-transform: uppercase;
+    text-align: center;
+    background: linear-gradient(to right, #d9d9d9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateY(-200px);
+}
+
+.light_dark {
+    position: absolute;
+    color: #ffffff;
+    left: 815px;
+    transform: translateX(-799px);
+    width: 45px;
+    height: 690px;
+    cursor: pointer;
+}
