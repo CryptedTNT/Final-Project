@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reddit Post Emotion Classifier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+
+</head>
+
+<body class="bg-light text-light m-0 p-0">
+<div class="container-fluid min-vh-100 d-flex flex-column position-relative bg-light text-dark" id="container">
+    <!-- Content Box -->
+    <div class="m-4 bg-light text-dark p-4 rounded shadow position-relative" id="contentBox">
+
+        <!-- Toolbar (Sidebar Menu) -->
+        <div class="offcanvas offcanvas-end text-dark bg-light" tabindex="-1" id="rightSidebar" aria-labelledby="rightSidebarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title fs-1" id="rightSidebarLabel">Menu</h5>
+                <button type="button" class="btn-close btn-close-light text-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body bg-light text-dark" id="canvasBody">
+                <div class="btn-group-vertical w-100 d-flex align-items-center bg-light text-dark" id="buttonGroup" role="group" aria-label="Vertical button group">
+
+                    <!-- Settings Button -->
+                    <button type="button" class="border-dark btn btn-light bg-light text-dark fs-1 "  id="historyButton">History</button>
+
+                    <!-- Settings Collapse -->
+                    <button class="btn btn-light bg-light text-dark fs-1 border-dark" id="settingsButton" data-bs-toggle="collapse" data-bs-target="#settingsCollapse" aria-expanded="false" aria-controls="settingsCollapse">Settings</button>
+                    <div class="collapse w-100 mb-2" id="settingsCollapse">
+                        <div class="d-flex flex-column align-items-center mt-2 text-dark bg-light" id="settingsContainer">
+                            <button class="btn btn-outline-dark w-75 my-1 border-dark" id="lightModeBtn" onclick="setLightMode()">Light Mode</button>
+                            <button class="btn btn-outline-dark w-75 my-1 border-dark" id="darkModeBtn" onclick="setDarkMode()">Dark Mode</button>
+                        </div>
+                    </div>
+                    <!-- Contact Us Collapse Button -->
+                    <button class="btn btn-light text-dark fs-1 border-dark" id="contactButton"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#contactCollapse"
+                            aria-expanded="false"
+                            aria-controls="contactCollapse">
+                        Contact Us
+                    </button>
+
+                    <!-- Contact Section -->
+                    <div class="collapse w-100 m-3 p-relative" id="contactCollapse" >
+                        <div class="container mb-2">
+                            <!-- Carousel -->
+                            <div id="contactCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+
+                                    <!-- Slide 1 -->
+                                    <div class="carousel-item active">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="card" style="width: 18rem;">
+                                                <img src="resources/Brinas.jpg" class="card-img-top" alt="Image 1">
+                                                <div class="card-body text-center bg-light text-dark" id="slide1">
+                                                    <h5 class="card-title">Zyrhus Vincent Q. Briñas</h5>
+                                                    <p class="card-text">0323-3546@lspu.edu.ph<br>
+                                                        09934058864
+                                                        </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 2 -->
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="card" style="width: 18rem;">
+                                                <img src="resources/Bueta.jpg." class="card-img-top" alt="Image 2">
+                                                <div class="card-body text-center bg-light text-dark" id="slide2">
+                                                    <h5 class="card-title">Niño Jay Q. Bueta</h5>
+                                                    <p class="card-text">0323-3528@lspu.edu.ph <br>
+                                                        09682632350
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 3 -->
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="card" style="width: 18rem;">
+                                                <img src="resources/Cosico.jpg" class="card-img-top" alt="Image 3">
+                                                <div class="card-body text-center bg-light text-dark" id="slide3">
+                                                    <h5 class="card-title">Jose Cresnald M. Cosico</h5>
+                                                    <p class="card-text">0323-3462@lspu.edu.ph<br>
+                                                        09304292198
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 4 -->
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="card" style="width: 18rem;">
+                                                <img src="resources/Diones.jpg" class="card-img-top" alt="Image 4">
+                                                <div class="card-body text-center bg-light text-dark" id="slide4">
+                                                    <h5 class="card-title">Prince Alexis M. Diones</h5>
+                                                    <p class="card-text">0323-3547@lspu.edu.ph <br>
+                                                        09072711419
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 5 -->
+                                    <div class="carousel-item">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="card" style="width: 18rem;">
+                                                <img src="resources/Lumalang.jpg" class="card-img-top" alt="Image 5">
+                                                <div class="card-body text-center bg-light text-dark" id="slide5">
+                                                    <h5 class="card-title">Earl Gerard V. Lumalang</h5>
+                                                    <p class="card-text ">0323-3543@lspu.edu.ph <br>
+                                                        09663182635
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Indicators -->
+                                <div class="carousel-indicators custom-indicators  p-flex">
+                                    <button type="button" data-bs-target="#contactCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#contactCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#contactCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#contactCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                    <button type="button" data-bs-target="#contactCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                </div>
+
+                                <!-- Arrows -->
+                                <!-- Prev Button -->
+                                <button class="carousel-control-prev custom-prev" type="button" data-bs-target="#contactCarousel" data-bs-slide="prev">
+                                    <i class="fas fa-chevron-left fa-2x text-dark bg-transparent" id="contactPrevButton"></i>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+
+                                <!-- Next Button -->
+                                <button class="carousel-control-next custom-next" type="button" data-bs-target="#contactCarousel" data-bs-slide="next">
+                                    <i class="fas fa-chevron-right fa-2x text-dark bg-transparent" id="contactNextButton"></i>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Collapse -->
+                    <button class="btn btn-light bg-light text-dark fs-1 border-dark" id="aboutButton" data-bs-toggle="collapse" data-bs-target="#aboutCollapse" aria-expanded="false" aria-controls="aboutCollapse">About</button>
+                    <div class="collapse w-100 bg-light text-dark" id="aboutCollapse">
+                        <div class="d-flex flex-column align-items-center mt-3 px-2">
+                            <p class="aboutTextLight text-center text-dark bg-light">
+                                <strong>Reddit Post Emotion Classifier</strong> is a web-based tool that uses machine learning to analyze tweets and accurately identify the underlying emotions—such as happiness, sadness, anger, fear, and more—helping users gain insights in real time.
+                            </p>
+                            <p class="aboutTextDark text-center text-light bg-dark">
+                                <strong>Reddit Post Emotion Classifier</strong> is a web-based tool that uses machine learning to analyze tweets and accurately identify the underlying emotions—such as happiness, sadness, anger, fear, and more—helping users gain insights in real time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- Toolbar side Menu end -->
+
+        <!-- Light toolbar Button -->
+        <div class="lighttoolbar position-absolute top-0 end-0 m-3" style="display: block;">
+            <button class="btn btn-link text-dark " type="button" data-bs-toggle="offcanvas" data-bs-target="#rightSidebar" aria-controls="rightSidebar">
+                <i class="fa-solid fa-bars fa-2x"></i>
+            </button>
+        </div>
+        <!-- Dark toolbar Button -->
+        <div class="darktoolbar position-absolute top-0 end-0 m-3" style="display: none;">
+            <button class="btn btn-link text-light border-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#rightSidebar" aria-controls="rightSidebar">
+                <i class="fa-solid fa-bars fa-2x"></i>
+            </button>
+        </div>
+
+        <!-- Centered Heading -->
+        <div class="d-flex justify-content-center mt-3">
+            <h1 class="text-center fw-bold">REDDIT POST EMOTION CLASSIFIER</h1>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="container my-4">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2 btn-outline-dark" type="search" placeholder="Type or Paste the link here..." aria-label="Search">
+            </form>
+        </div>
+
+
+        <!-- Submit Button -->
+        <div class="d-flex justify-content-center mt-4">
+            <button type="button" class="btn btn-outline-dark my-1 text-dark bg-light" id="submitBtn">Submit</button>
+        </div>
+
+    </div> <!-- Contentbox End-->
+
+</div> <!-- Container end -->
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/072d79bd41.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>

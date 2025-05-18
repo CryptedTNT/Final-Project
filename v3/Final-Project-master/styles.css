@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif
+}
+
+#right_section{
+    display: none;
+}
+.content-box{
+    min-height: 100vh;
+}
+
+
+.darktoolbar {
+    display: none;
+}
+
+.aboutTextDark {
+    display: none;
+}
+
+
+/* Carousel controls */
+.carousel-indicators.custom-indicators {
+    position: absolute;
+    bottom: -30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carousel-indicators.custom-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #d3d3d3;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Custom button adjustments */
+.custom-prev{
+    left: -20px;
+}
+.custom-next{
+    right:-20px;
+}
+
+.custom-indicators{
+    bottom: -100px;
+}
